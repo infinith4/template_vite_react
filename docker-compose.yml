@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  apps:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 9001:9001
+    tty: true
+    volumes:
+      - type: bind
+        source: ./react-vite-project
+        target: /react-vite-project
+
+volumes:
+  bin:
+  out:
